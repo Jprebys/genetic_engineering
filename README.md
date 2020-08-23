@@ -1,3 +1,5 @@
+![](src/figures/header_2.png)
+
 # Genetic Engineering Attribution
 
 by Jacob Prebys
@@ -11,3 +13,8 @@ Here I will have all of my work for the Genetic Engineering Attribution Challeng
 ### Data Acquisition
 
 Like all DataDriven competitions, you must make an account and register for the competition before you can download the data. Once you have done that you can download the training features and training labels, both of which are ~300 MB .csv files. 
+
+
+
+
+*Header illustration by Brian Stauffer*
