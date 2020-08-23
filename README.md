@@ -1,4 +1,4 @@
-![](src/figures/header_2.png)
+![](src/figures/section_header.png)
 
 # Genetic Engineering Attribution
 
