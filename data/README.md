@@ -17,5 +17,4 @@ There are 41 columns in this dataset. Each row corresponds to a plasmid DNA sequ
 # Label Descriptions
 
 The labels identify the lab of origin for each DNA sequence. They are one hot encoded, meaning there is a column for each lab ID. The correct lab of origin for each sequence_id is indicated with a 1.0, and the rest of the values in the row are 0.0. You can find an example of how to collapse these labels into two columns, sequence_id and lab_id, in the [benchmark](https://www.drivendata.co/blog/genetic-attribution-benchmark).
-=======
->>>>>>> c8fa9fa6e69e4504039218adf652236302fae441:data/README.md
+
