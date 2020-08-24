@@ -1,4 +1,4 @@
-# Data Description
+# Value Descriptions
 
 This dataset consists of DNA sequences from genetically engineered plasmids. Plasmids are small, circular DNA molecules that replicate independently from chromosomes.
 
@@ -12,3 +12,7 @@ There are 41 columns in this dataset. Each row corresponds to a plasmid DNA sequ
 - `growth_temp_30`, `growth_temp_37`, `growth_temp_other` (type: binary): One-hot encoded columns that indicate the temperature the plasmid should be grown at.
 - `selectable_markers_blasticidin`, `selectable_markers_his3`, `selectable_markers_hygromycin`, `selectable_markers_leu2`, `selectable_markers_neomycin`, `selectable_markers_other`,`selectable_markers_puromycin`, `selectable_markers_trp1`, `selectable_markers_ura3`, `selectable_markers_zeocin` (type: binary): One-hot encoded columns that indicate genes that allow non-bacterial selection (for a plasmid used outside of the cloning organism).
 - `species_budding_yeast`, `species_fly`, `species_human`, `species_mouse`,`species_mustard_weed`, `species_nematode`, `species_other`, `species_rat`, `species_synthetic`, `species_zebrafish` (type: binary): One-hot encoded columns that indicate the species the plasmid is used in, after cloning.
+
+# Label Descriptions
+
+The labels identify the lab of origin for each DNA sequence. They are one hot encoded, meaning there is a column for each lab ID. The correct lab of origin for each sequence_id is indicated with a 1.0, and the rest of the values in the row are 0.0. You can find an example of how to collapse these labels into two columns, sequence_id and lab_id, in the [benchmark](https://www.drivendata.co/blog/genetic-attribution-benchmark).

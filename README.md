@@ -15,6 +15,11 @@ Here I will have all of my work for the Genetic Engineering Attribution Challeng
 Like all DataDriven competitions, you must make an account and register for the competition before you can download the data. Once you have done that you can download the training features and training labels, both of which are ~300 MB .csv files. 
 
 
+# Contact Info
 
+
+|  Github |         email         | LinkedIn |
+|:-------:|:---------------------:|:--------:|
+| jprebys | jacobprebys@gmail.com |  jprebys |
 
 *Header illustration by Brian Stauffer*
