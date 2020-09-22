@@ -37,29 +37,59 @@ def top10_accuracy_scorer(estimator, X, y):
  
     return top_10_accuracy
 
-def get_ngram_features(data, subsequences):
+
+
+
+def get_ngram_features(data, subsequences, overlapping=False):
     """Generate counts for each subsequence.
 
     Args:
         data (DataFrame): The data you want to create features from. Must include a "sequence" column.
         subsequences (list): A list of subsequences to count.
+        overlapping (bool): True if you want overlapping counts, False by default
 
     Returns:
         DataFrame: A DataFrame with one column for each subsequence.
     """
     features = pd.DataFrame(index=data.index)
+    
     for subseq in subsequences:
-        features[subseq] = data.sequence.str.count(subseq)
+        if overlapping:
+            features[subseq] = data.sequence.apply(find_overlapping, args=(subseq, ))
+        else:
+            features[subseq] = data.sequence.str.count(subseq)
+        
+            
     return features
 
+
+def find_overlapping(seq, subseq):
+    """Count overlapping occurences of a given substring in a given string"""
+    
+    pos, count = 0, 0
+    while True:
+        pos = seq.find(subseq, pos)
+        if pos < 0:
+            break
+        pos += 1    
+        count += 1
+    return count   
+    
+    
+
 def get_training_data():
+    """Load the training data from the data folder
+    and return two DataFrames"""
     
     X = pd.read_csv('../data/train_values.csv').set_index('sequence_id')
     y = pd.read_csv('../data/train_labels.csv').set_index('sequence_id')
     return X, y
 
+
+
 def get_perms(n):
     """Return list of permutations with length n"""
+    
     from itertools import permutations
     bases = 'CATGN'
     return [''.join(perm) for perm in permutations(bases, n)]
