@@ -38,7 +38,7 @@ def top10_accuracy_scorer(estimator, X, y):
     return top_10_accuracy
 
 def get_ngram_features(data, subsequences):
-    """Generates counts for each subsequence.
+    """Generate counts for each subsequence.
 
     Args:
         data (DataFrame): The data you want to create features from. Must include a "sequence" column.
@@ -51,3 +51,17 @@ def get_ngram_features(data, subsequences):
     for subseq in subsequences:
         features[subseq] = data.sequence.str.count(subseq)
     return features
+
+def get_training_data():
+    
+    X = pd.read_csv('../data/train_values.csv').set_index('sequence_id')
+    y = pd.read_csv('../data/train_labels.csv').set_index('sequence_id')
+    return X, y
+
+def get_perms(n):
+    """Return list of permutations with length n"""
+    from itertools import permutations
+    bases = 'CATGN'
+    return [''.join(perm) for perm in permutations(bases, n)]
+    
+    
