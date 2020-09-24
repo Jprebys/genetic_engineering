@@ -95,3 +95,9 @@ def get_perms(n):
     return [''.join(perm) for perm in permutations(bases, n)]
     
     
+def get_subs(n):
+    """Get list of all possible n-length sequences of genes"""
+    
+    from itertools import product
+    return [''.join(sub) for sub in product('CATGN', repeat=n)]    
+    
