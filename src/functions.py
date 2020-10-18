@@ -99,5 +99,17 @@ def get_subs(n):
     """Get list of all possible n-length sequences of genes"""
     
     from itertools import product
-    return [''.join(sub) for sub in product('CATGN', repeat=n)]    
+    return [''.join(sub) for sub in product('CATGN', repeat=n)]
+
+
+
+def to_numeric_sequence(sequence, subseq_len=3):
+    """Take in a gene sequence as a string
+    Return a numeric sequence representing it
+    """
+    subs = get_subs(subseq_len)
+    encoder = {sub: i for i, sub in enumerate(subs)}
+    num_list = [encode[sequence[i:i+subseq_len]] for i in range(len(sequence) - 2)]
+    
+    return np.array(num_list)
     
