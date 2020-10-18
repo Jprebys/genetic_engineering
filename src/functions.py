@@ -105,7 +105,9 @@ def get_subs(n):
 
 def to_numeric_sequence(sequence, subseq_len=3):
     """Take in a gene sequence as a string
+    optional arg subseq_len
     Return a numeric sequence representing it
+    as a Numpy array
     """
     subs = get_subs(subseq_len)
     encoder = {sub: i for i, sub in enumerate(subs)}

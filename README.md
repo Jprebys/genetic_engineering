@@ -20,6 +20,10 @@ Like all DataDriven competitions, you must make an account and register for the 
 
 First thing to note is that there is a huge class imbalance here. One laboratory accounts for over 8,000 samples, while the average is 47 samples per lab. Two labs are only represented by one sample, so dealing with class imbalance will be a huge factor in increasing model performace. Here is 
 
+### Modeling
+
+As seen in the competition benchmark, one way of breaking down the gene sequences is to just count the individual subsequences. I used both overlapping and non-overlapping counters, but I have not been able to get a score higher than about 60%. My next idea was encode each subsequence as a number, and then turn the sequences into Numpy arrays representing the order oof the subsequences. This way, all
+
 
 # Contact Info
 
