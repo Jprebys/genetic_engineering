@@ -111,7 +111,7 @@ def to_numeric_sequence(sequence, subseq_len=3):
     """
     subs = get_subs(subseq_len)
     encoder = {sub: i for i, sub in enumerate(subs)}
-    num_list = [encode[sequence[i:i+subseq_len]] for i in range(len(sequence) - 2)]
+    num_list = [encoder[sequence[i:i+subseq_len]] for i in range(len(sequence) - 2)]
     
     return np.array(num_list)
     
