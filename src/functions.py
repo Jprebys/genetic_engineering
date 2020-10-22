@@ -114,4 +114,15 @@ def to_numeric_sequence(sequence, subseq_len=3):
     num_list = [encoder[sequence[i:i+subseq_len]] for i in range(len(sequence) - 2)]
     
     return np.array(num_list)
+
+
+def imputer(seq, n=500):
+    """Take numpy array and desired array length
+    if length is greater than desired, cut down,
+    if shorter then pad with zeros
+    """
+    cur = len(seq)
+    if cur < n:
+        return np.concatenate((seq, np.zeros(n - cur)))
+    return seq[: n]
     
