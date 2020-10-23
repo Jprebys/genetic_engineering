@@ -22,7 +22,7 @@ First thing to note is that there is a huge class imbalance here. One laboratory
 
 ### Modeling
 
-As seen in the competition benchmark, one way of breaking down the gene sequences is to just count the individual subsequences. I used both overlapping and non-overlapping counters, but I have not been able to get a score higher than about 60%. My next idea was encode each subsequence as a number, and then turn the sequences into Numpy arrays representing the order oof the subsequences. This way, all
+As seen in the competition benchmark, one way of breaking down the gene sequences is to just count the individual subsequences. I used both overlapping and non-overlapping counters, but I have not been able to get a score higher than about 60%. My next idea was encode each subsequence as a number, and then turn the sequences into Numpy arrays representing the order of the subsequences. This way, all this information about the order is preserved, rather than just counting up subsequences. To start I will be using Keras with the Tensorflow backend, and I will just try to make a simple sequential, dense-layered NN. This work will be in the [fourth exploratory notebook](exploratory/04_jp_basicnn.ipynb).
 
 
 # Contact Info
